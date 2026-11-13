@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hệ Thống Discord Bot - Lithium, Counting Tốt Nhì Việt Nam Không Tốt Nhất Được Vì Không có Tài Liệu Chứng Minh Hehe </title>
+    <title>Bot Nhà Làm - Lithium, Welcome, Giveaway & Counting</title>
     <style>
         :root {
             --bg-dark: #1e1f22;
@@ -40,6 +40,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .logo {
@@ -55,50 +57,63 @@
             color: var(--blurple);
         }
 
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
         nav button {
             background: none;
             border: none;
             color: var(--text-muted);
             font-size: 1rem;
-            margin-left: 20px;
             cursor: pointer;
             font-weight: 600;
             transition: color 0.2s;
+            padding: 5px 8px;
         }
 
         nav button:hover, nav button.active {
             color: var(--text-main);
+            border-bottom: 2px solid var(--blurple);
         }
 
         /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 3rem 20px;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 650px;
+            font-size: 1.1rem;
+            max-width: 680px;
             margin: 0 auto;
         }
 
-        /* Bot Cards Grid */
+        /* Bot Cards Grid (2x2 cân đối cho 4 bot) */
         .bot-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
             gap: 25px;
+        }
+
+        @media (max-width: 500px) {
+            .bot-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .bot-card {
@@ -134,6 +149,7 @@
             justify-content: center;
             font-size: 1.6rem;
             font-weight: bold;
+            flex-shrink: 0;
         }
 
         .bot-title h2 {
@@ -189,7 +205,7 @@
             background-color: var(--blurple-hover);
         }
 
-        /* Legal / Terms Section */
+        /* Legal & Support Box */
         .legal-box {
             background-color: var(--bg-card);
             padding: 35px;
@@ -221,6 +237,14 @@
             padding-left: 20px;
         }
 
+        .support-link-box {
+            background-color: var(--bg-dark);
+            border: 1px solid #383a40;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -234,11 +258,12 @@
 <body>
 
     <header>
-        <div class="logo">🤖 <span>Bot</span>Nhà </span> Làm</div>
+        <div class="logo">🤖 <span>Bot</span> Nhà Làm</div>
         <nav>
             <button class="active" onclick="showTab('home', this)">Danh sách Bot</button>
             <button onclick="showTab('tos', this)">Điều khoản dịch vụ</button>
             <button onclick="showTab('privacy', this)">Chính sách bảo mật</button>
+            <button onclick="showTab('support', this)">Hỗ trợ</button>
         </nav>
     </header>
 
@@ -247,7 +272,7 @@
         <div id="home" class="tab-content">
             <div class="hero">
                 <h1>Bộ Công Cụ Quản Lý & Giải Trí Discord</h1>
-                <p>Hệ thống 2 bot tốt nhì Việt Nam vì không có tài liệu chứng minh, hoạt động độc lập, ổn định 24/7 giúp tối ưu hóa việc quản trị thành viên, tổ chức sự kiện và tăng tương tác cho server của bạn.</p>
+                <p>Hệ thống 4 bot hoạt động độc lập, ổn định 24/7 giúp tối ưu hóa việc quản trị thành viên, chào đón người mới, tổ chức sự kiện và tăng tương tác cho server của bạn.</p>
             </div>
 
             <div class="bot-grid">
@@ -269,11 +294,34 @@
                             <li>Kiểm tra lịch sử vi phạm theo ID</li>
                         </ul>
                     </div>
-                    <!-- THAY LINK MỜI BOT LITHIUM CỦA ÔNG VÀO ĐÂY -->
+                    <!-- THAY LINK MỜI BOT LITHIUM VÀO ĐÂY -->
                     <a href="https://discord.com/oauth2/authorize?client_id=1566329003361701898&permissions=2147551232&integration_type=0&scope=bot" target="_blank" class="invite-btn">➕ Mời Lithium vào Server</a>
                 </div>
 
-                <!-- BOT 2: COUNTING -->
+                <!-- BOT 2: WELCOME -->
+                <div class="bot-card">
+                    <div>
+                        <div class="bot-header">
+                            <div class="bot-icon" style="background-color: #9b59b6;">👋</div>
+                            <div class="bot-title">
+                                <h2>Welcome Bot</h2>
+                                <span class="badge">● Online 24/7</span>
+                            </div>
+                        </div>
+                        <p class="bot-desc">Hệ thống chào đón thành viên mới tự động với giao diện Embed chuyên nghiệp và tùy chỉnh linh hoạt cho từng server.</p>
+                        <ul class="features">
+                            <li>Tùy chỉnh lời chào riêng với biến động {user}, {server}, {count}</li>
+                            <li>Hỗ trợ chèn ảnh Banner lớn bắt mắt dưới khung thông báo</li>
+                            <li>Tự động gán vai trò (Auto-Role) ngay khi thành viên gia nhập</li>
+                            <li>Cấu hình nhanh chóng qua lệnh Slash Command (/)</li>
+                        </ul>
+                    </div>
+     
+                    <!-- THAY LINK MỜI BOT WELCOME VÀO ĐÂY -->
+                    <a href="https://discord.com/oauth2/authorize?client_id=1570774965236793395&permissions=2251799813810240&integration_type=0&scope=bot" target="_blank" class="invite-btn">➕ Mời Welcome Bot vào Server</a>
+                </div>
+
+                <!-- BOT 3: COUNTING -->
                 <div class="bot-card">
                     <div>
                         <div class="bot-header">
@@ -291,8 +339,8 @@
                             <li>Phản hồi trực quan bằng biểu tượng cảm xúc</li>
                         </ul>
                     </div>
-                    <!-- THAY LINK MỜI BOT COUNTING CỦA ÔNG VÀO ĐÂY -->
-                    <a href="https://discord.com/oauth2/authorize?client_id=1566295826760732733&permissions=2147551232&integration_type=0&scope=bot" target="_blank" class="invite-btn">➕ Mời Counting Bot vào Server</a>
+                    <!-- THAY LINK MỜI BOT COUNTING VÀO ĐÂY -->
+                    <a hrefhttps://discord.com/oauth2/authorize?client_id=1566295826760732733&permissions=2147551232&integration_type=0&scope=bot" target="_blank" class="invite-btn">➕ Mời Counting Bot vào Server</a>
                 </div>
             </div>
         </div>
@@ -303,13 +351,13 @@
             <p>Cập nhật lần cuối: Tháng 11 năm 2026</p>
 
             <h3>1. Chấp nhận điều khoản</h3>
-            <p>Bằng việc mời và sử dụng bất kỳ con bot nào trong hệ thống (Lithium Bot, Counting Bot) vào máy chủ Discord của bạn, bạn đồng ý tuân thủ các điều khoản được nêu tại đây cũng như Điều khoản dịch vụ của Discord.</p>
+            <p>Bằng việc mời và sử dụng bất kỳ con bot nào trong hệ thống (Lithium Bot, Welcome Bot, Giveaway Bot, Counting Bot) vào máy chủ Discord của bạn, bạn đồng ý tuân thủ các điều khoản được nêu tại đây cũng như Điều khoản dịch vụ của Discord.</p>
 
             <h3>2. Quy định sử dụng hợp lệ</h3>
             <ul>
                 <li>Không sử dụng bot vào các mục đích spam, phá hoại máy chủ hoặc vi phạm pháp luật.</li>
                 <li>Không cố tình khai thác lỗ hổng, tấn công DDoS hoặc làm quá tải hệ thống máy chủ vận hành bot.</li>
-                <li>Quản trị viên máy chủ chịu trách nhiệm phân quyền hợp lý khi sử dụng các lệnh quản lý (Ban, Kick, Mute) của Lithium Bot.</li>
+                <li>Quản trị viên máy chủ chịu trách nhiệm về nội dung hình ảnh banner, lời chào mừng và phân quyền hợp lý khi sử dụng các lệnh quản lý.</li>
             </ul>
 
             <h3>3. Giới hạn trách nhiệm</h3>
@@ -324,7 +372,7 @@
             <h3>1. Dữ liệu chúng tôi thu thập</h3>
             <p>Để các tính năng hoạt động chính xác, hệ thống chỉ lưu trữ các thông tin định danh cơ bản dưới dạng ID công khai của Discord:</p>
             <ul>
-                <li><strong>Server ID & Channel ID:</strong> Dùng để lưu cấu hình ngôn ngữ, kênh log, kênh đếm số và sự kiện giveaway.</li>
+                <li><strong>Server ID & Channel ID:</strong> Dùng để lưu cấu hình ngôn ngữ, kênh log, kênh chào mừng, banner, kênh đếm số và sự kiện giveaway.</li>
                 <li><strong>User ID & Lý do vi phạm:</strong> Chỉ lưu trữ khi quản trị viên sử dụng các lệnh kỷ luật (Warn, Mute, Ban) hoặc ghi nhận lượt đếm số.</li>
             </ul>
 
@@ -332,11 +380,10 @@
             <p>Chúng tôi tuyệt đối <strong>không</strong> thu thập tin nhắn riêng tư, mật khẩu, email hay bất kỳ thông tin cá nhân nhạy cảm nào của người dùng. Dữ liệu chỉ phục vụ cho hoạt động nội bộ của bot và không chia sẻ cho bất kỳ bên thứ ba nào.</p>
 
             <h3>3. Yêu cầu xóa dữ liệu</h3>
-            <p>Nếu bạn muốn xóa toàn bộ dữ liệu của máy chủ khỏi hệ thống, bạn chỉ cần kick bot khỏi máy chủ hoặc liên hệ trực tiếp với nhà phát triển để được hỗ trợ xóa thủ công.</p>
+            <p>Nếu bạn muốn xóa toàn bộ dữ liệu cấu hình của máy chủ khỏi hệ thống, bạn chỉ cần kick bot khỏi máy chủ hoặc liên hệ trực tiếp với nhà phát triển qua kênh Hỗ trợ để được xóa thủ công.</p>
         </div>
-    </div>
-    
-    <!-- TAB 4: HỖ TRỢ (NẰM BÊN CẠNH ĐIỀU KHOẢN) -->
+
+        <!-- TAB 4: HỖ TRỢ -->
         <div id="support" class="legal-box">
             <h2>💬 Trung Tâm Hỗ Trợ</h2>
             <p>Nếu bạn gặp lỗi trong quá trình sử dụng, cần hướng dẫn thiết lập lệnh hoặc muốn đóng góp ý tưởng tính năng mới cho hệ thống Bot Nhà Làm, hãy liên hệ trực tiếp với chúng tôi.</p>
@@ -344,7 +391,7 @@
             <div class="support-link-box">
                 <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 12px; padding-left: 0;">
                     <strong>Hỗ trợ tại:</strong> 
-                    <!-- THAY LINK DISCORD CỦA ÔNG VÀO CẢ 2 CHỖ DƯỚI ĐÂY -->
+                    <!-- THAY LINK DISCORD VÀO CẢ 2 CHỖ DƯỚI ĐÂY -->
                     <a href="https://discord.gg/fCRXw2XmgH" target="_blank" style="color: var(--blurple); text-decoration: underline;">
                         https://discord.gg/fCRXw2XmgH
                     </a>
@@ -354,29 +401,34 @@
                 </a>
             </div>
 
+            <h3>Các vấn đề thường được hỗ trợ:</h3>
+            <ul>
+                <li>Hướng dẫn cấp quyền (Permissions) để bot hoạt động đầy đủ chức năng.</li>
+                <li>Xử lý lỗi không nhận lệnh Slash Command (`/`) hoặc lỗi cấu hình kênh welcome/đếm số.</li>
+                <li>Yêu cầu xóa dữ liệu server theo Chính sách bảo mật.</li>
+            </ul>
+        </div>
+    </div>
+
     <footer>
-        © 2026 Bot Nhà Làm Dashboard • Developed by Itz_Khang
+        © 2026 Bot Nhà Làm • Developed by Itz_Khang
     </footer>
 
     <script>
         function showTab(tabId, btnElement) {
-            // Ẩn toàn bộ nội dung tab
             document.getElementById('home').style.display = 'none';
-            document.getElementById('tos').classList.remove('active');
-            document.getElementById('privacy').classList.remove('active');
+            const legalBoxes = document.querySelectorAll('.legal-box');
+            legalBoxes.forEach(box => box.classList.remove('active'));
 
-            // Bỏ trạng thái active ở các nút menu
             const buttons = document.querySelectorAll('nav button');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Hiển thị tab được chọn
             if (tabId === 'home') {
                 document.getElementById('home').style.display = 'block';
             } else {
                 document.getElementById(tabId).classList.add('active');
             }
 
-            // Đánh dấu nút đang chọn
             btnElement.classList.add('active');
         }
     </script>
